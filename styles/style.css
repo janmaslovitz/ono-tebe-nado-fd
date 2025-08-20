@@ -1,1 +1,73 @@
-/* место для вашего кода */
+body {
+
+  height: auto;
+  min-height: 100%;
+}
+.header {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  align-items: center;
+  padding: 92px 50px 96px 50px;
+  height: 100%;
+  min-height: 293px;
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  }
+.header_menu {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-direction: row;
+  gap: 32px;
+  list-style: circle;
+  background-color: aqua;
+}
+.header_menu-item:first-child {
+  list-style: none;
+}
+.header_menu-item.active .header_menu-link {
+  text-decoration-line: none;
+}
+.header_logo {
+  display: block;
+  width: 148px;
+}
+.header_address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 240px;
+  justify-self: end;
+  line-height: 24.3px;
+  text-underline-offset:5px;
+  word-break: break-all;
+}
+.cover {
+  position: relative;
+  min-height: 757px;
+  height: 100%;
+  padding: 0 24px 180px 24px;
+  background-image: url(../images/cover.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.lots {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: 1052px;
+  max-height: 723px;
+  padding: 180px 24px 120px 24px;
+  flex-shrink: 0;
+}
+.about {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: 1052px;
+  max-height: 723px;
+  padding: 120px 24px 180px 24px;
+  flex-shrink: 0;
+}
