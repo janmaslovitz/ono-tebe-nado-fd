@@ -1,5 +1,4 @@
 body {
-
   height: auto;
   min-height: 100%;
 }
@@ -17,12 +16,14 @@ body {
   }
 .header_menu {
   display: flex;
-  margin: auto;
-  align-items: center;
+  flex-wrap: nowrap;
   flex-direction: row;
+  align-items: flex-start;
   gap: 32px;
   list-style: circle;
-  background-color: aqua;
+  }
+.header_menu-link {
+  align-self: center;
 }
 .header_menu-item:first-child {
   list-style: none;
@@ -42,7 +43,7 @@ body {
   justify-self: end;
   line-height: 24.3px;
   text-underline-offset:5px;
-  word-break: break-all;
+  word-break: keep-all;
 }
 .cover {
   position: relative;
