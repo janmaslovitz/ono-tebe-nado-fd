@@ -1,12 +1,7 @@
-body {
-  height: auto;
-  min-height: 100%;
-}
 .header {
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  height: 293px;
   padding: 92px 50px 96px 50px;
   color: #000;
   font-weight: 400;
@@ -17,15 +12,15 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  line-height: 22px;
-  list-style: circle;
   gap: 32px;
+  line-height: 22px;
   text-underline-offset: 4px;
+  list-style: circle;
 }
-.header__menu-item:first-child {
+.header__menu__item:first-child {
   list-style: none;
 }
-.header__menu-link.active {
+.header__menu__link.active {
   text-decoration: none;
 }
 .header__logo {
@@ -35,26 +30,23 @@ body {
   align-items: center;
   padding-left: 4px;
 }
-.header__logo-image {
+.header__logo__image {
   display: block;
   width: 148px;
 }
 .address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   line-height: 24.3px;
   text-underline-offset: 4px;
 }
-.top {
-  display: flex;
-  flex-direction: column;
+.address_header {
   justify-self: end;
-  align-items: flex-start;
   max-width: 240px;
   word-break: keep-all;
 }
-.bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.address_footer {
   max-width: 264.57px;
   word-break: normal;
 }
@@ -87,24 +79,22 @@ body {
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
-.aligned-text {
+.aligned_text {
   display: block;
   width: 100%;
   margin-bottom: 17px;
 }
 .center {
-  width: 100%;
   text-align: center;
   text-indent: 0.3em;
 }
 .right {
-  width: 100%;
   text-align: end;
 }
-.no-letter-spacing {
+.no_letter_spacing {
   letter-spacing: 0;
 }
-.cover-description {
+.cover__description {
   position: relative;
   z-index: 1;
   display: flex;
@@ -112,29 +102,22 @@ body {
   align-items: center;
   width: 100%;
 }
-.cover__description-text {
+.cover__description_text {
   color: #fff;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 22px;
   font-style: normal;
   line-height: 28px;
   text-transform: uppercase;
-}
-.whitespace-wide {
-  letter-spacing: 19.8px;
+  word-spacing: 18.6px;
 }
 
-.whitespace-short {
-  letter-spacing: 17.6px;
-}
-
-.bet-button {
-  width: 256px;
-  height: 51px;
+.bet_button {
   border: 1px solid #fff;
+  padding: 12px 32px;
   color: #fff;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 22px;
   font-style: normal;
@@ -145,20 +128,18 @@ body {
   cursor: pointer;
 }
 .lots {
-  display: flex;
-  flex-direction: column;
   margin: 180px 24px 0 24px;
 }
 .lots__heading {
   padding-left: 39px;
   color: #000;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: normal;
   text-transform: uppercase;
 }
-.lots__card-list {
+.lots__card__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -166,28 +147,24 @@ body {
   margin: 27px 0 30px 0;
   list-style-type: none;
 }
-.lots__card-list-item {
+.lots__card__list__item {
   position: relative;
   z-index: 1;
   width: 334px;
-  height: 596px;
+  min-height: 596px;
 }
-/*Не до конца понял, зачем нам card-link. 
-Страктовал это так, что им мы обеспечиваем 
-кликабельность тела карточки*/
-.card-link {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.card__link {
+  height: 100%;
+  text-decoration-line: none;
 }
 .card {
   position: relative;
-  z-index: -1;
+  z-index: 0;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  width: 100%;
   height: 100%;
   padding: 48px 40px;
   background-position: center;
@@ -195,27 +172,28 @@ body {
 }
 .card__title {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   color: #fff;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 22px;
   font-style: normal;
   line-height: 26.4px;
-  text-transform: uppercase;
   text-decoration: #fff underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
+  text-transform: uppercase;
 }
 .card__text {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   color: #fff;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 20px;
   font-style: normal;
   line-height: 24px;
 }
+
 /*Загружаем изображения для карточек в эту зону*/
 .card.type_film {
   background-image: url(../images/card-lot-01.jpg);
@@ -227,10 +205,11 @@ body {
   background-image: url(../images/card-lot-03.jpg);
 }
 /*Загружаем изображения для карточек в эту зону*/
-.lots__look-more-link {
+
+.lots__look_more_link {
   padding-left: 39px;
   color: #000;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: normal;
@@ -258,7 +237,7 @@ body {
   border-radius: 100%;
   background-color: #000;
 }
-.about__logo-image {
+.about__logo_image {
   display: block;
   width: 148px;
 }
@@ -266,7 +245,7 @@ body {
   display: flex;
   margin-bottom: 100px;
   color: #000;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
 
   font-weight: 700;
   font-size: 40px;
@@ -278,7 +257,7 @@ body {
   flex-direction: column;
   gap: 24px;
   color: #000;
-  font-family: Raleway;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
 
   font-weight: 400;
   font-size: 20px;
@@ -288,23 +267,23 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
-  height: 180px;
-  padding: 180px 50px 0 50px;
+  margin-top: 180px;
+  padding: 0px 50px 82px 50px;
   color: #000;
   font-weight: 400;
   font-size: 18px;
 }
-.footer_menu {
+.footer__menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  list-style: none;
   text-underline-offset: 4px;
+  list-style: none;
 }
-.footer_menu-link {
+.footer__menu__link {
   align-self: center;
 }
-.footer_menu-item.active .footer_menu-link {
+.footer_menu__item.active .footer__menu__link {
   text-decoration-line: none;
 }
 .social {
@@ -314,7 +293,7 @@ body {
   gap: 48px;
   list-style: none;
 }
-.social_img {
+.social__img {
   display: block;
   width: 48px;
 }
