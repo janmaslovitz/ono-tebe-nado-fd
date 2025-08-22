@@ -9,6 +9,13 @@ body {
   margin: 0 auto;
   font-family: Raleway, sans-serif;
 }
+button {
+  margin: 0;
+	padding: 0;
+	border: 0;
+  border: 0;
+  background-color: transparent;
+}
 
 h1,
 h2,
@@ -20,12 +27,18 @@ p,
 ul,
 ol,
 li,
+div,
 blockquote {
   margin: 0;
-  padding: 0;
+	padding: 0;
+	border: 0;
 }
 
 a {
+  margin: 0;
+	padding: 0;
+	border: 0;
+  cursor: pointer;
   color: inherit;
 }
 
